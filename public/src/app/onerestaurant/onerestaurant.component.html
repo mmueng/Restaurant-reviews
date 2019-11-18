@@ -1,0 +1,23 @@
+<p>onerestaurant works!</p>
+<button routerLink="/">Home</button>
+
+
+<h1>{{onerest.name}} - {{onerest.cuisine}}</h1>
+
+
+<button routerLink="/rest/new/{{onerest._id}}">New review</button>
+
+<!-- <div *ngFor="let rev of onerest.review"> -->
+<table class="table">
+    <tr>
+        <td>Customer</td>
+        <td>Stars</td>
+        <td>Description</td>
+    </tr>
+    <tr *ngFor="let rev of onerest.review">
+        <td>{{rev.customer}}</td>
+        <td>{{rev.star}}</td>
+        <td>{{rev.desc}}</td>
+
+    </tr>
+</table>

@@ -1,0 +1,35 @@
+<p>newreview works!</p>
+
+
+<form>
+    {{errors.customer}}
+    <div *ngIf="!customer.valid"> Customer Name is required</div>
+    <label for="">customer:
+        <input type="text" name="customer" [(ngModel)]="editrest.customer" required minlength="3" maxlength="24"
+            #customer="ngModel" />
+    </label>
+    <br>
+    <section>
+        {{errors.star}}
+        <div *ngIf="!star.valid"> Customer Name is required</div>
+        <select name="star" [(ngModel)]="editrest.star" #star="ngModel">
+            <option value="5">5 Star</option>
+            <option value="4">4 Star</option>
+            <option value="3">3 Star</option>
+            <option value="2">2 Star</option>
+            <option value="1">1 Star</option>
+        </select>
+    </section>
+
+    <br>
+    {{errors.desc}}
+    <div *ngIf="!desc.valid"> Description Name is required</div>
+    <label for="">Description:
+        <input type="text" name="desc" [(ngModel)]="editrest.desc" required minlength="2" maxlength="24"
+            #desc="ngModel" />
+    </label>
+    <br>
+
+    <input (click)="onEditaddrev()" type="submit" value="Add Review" />
+</form>
+<button routerLink="/rest/{{editrest._id}}">Cancel</button>

@@ -1,0 +1,21 @@
+<p>editrest works!</p>
+<form> {{errors.name}}
+    <div *ngIf="!name.valid"> Name is required</div>
+    <label for="">name:
+        <input type="text" name="name" [(ngModel)]="editrest.name" required minlength="2" maxlength="24"
+            #name="ngModel" />
+    </label>
+    <br>
+    {{errors.cusinie}}
+    <div *ngIf="!cuisine.valid"> cuisine is required</div>
+    <label for="">cuisine:
+        <!-- {{name.errors | json}}
+            {{name.valid | json}} -->
+        <input type="text" name="cuisine" [(ngModel)]="editrest.cuisine" required minlength="3" maxlength="24"
+            #cuisine="ngModel" />
+    </label>
+    <br>
+    <input (click)="onEdit()" type="submit" value="Edit Restaurant" />
+</form>
+
+<button routerLink="/">Cancel</button>

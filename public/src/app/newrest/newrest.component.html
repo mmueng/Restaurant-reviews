@@ -1,0 +1,26 @@
+<p>newrest works!</p>
+
+<form (submit)="addrestFromService()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    {{errors.name}}
+    <div *ngIf="!name.valid"> Name is required</div>
+    <label for="">Name:
+        <!-- {{name.errors | json}}
+            {{name.valid | json}} -->
+        <input type="text" name="name" [(ngModel)]="newrest.name" required minlength="3" maxlength="24"
+            #name="ngModel" />
+    </label>
+    <br>
+    {{errors.cusinie}}
+    <div *ngIf="!cuisine.valid"> cuisine is required</div>
+    <label for="">cuisine:
+        <!-- {{name.errors | json}}
+            {{name.valid | json}} -->
+        <input type="text" name="cuisine" [(ngModel)]="newrest.cuisine" required minlength="3" maxlength="24"
+            #cuisine="ngModel" />
+    </label>
+    <br>
+    <input type="submit" value="Add restaurant" />
+</form>
+
+<button routerLink="/">Cancel</button>
